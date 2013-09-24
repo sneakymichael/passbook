@@ -280,8 +280,8 @@ class Pass(object):
         smime.set_x509_stack(stack)
 
         # create BIOs with our PEM-format strings
-        key_bio = BIO.MemoryBuffer(key)
-        certificate_bio = BIO.MemoryBuffer(certificate)
+        key_bio = SMIME.BIO.MemoryBuffer(key)
+        certificate_bio = SMIME.BIO.MemoryBuffer(certificate)
 
         smime.load_key_bio(key_bio, certificate_bio, callback=passwordCallback)
         pk7 = smime.sign(SMIME.BIO.MemoryBuffer(manifest), flags=SMIME.PKCS7_DETACHED | SMIME.PKCS7_BINARY)

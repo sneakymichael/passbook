@@ -59,9 +59,8 @@ Typical Usage
     certificate_string = os.environ['PASSBOOK_CERTIFICATE']
     key_string = os.environ['PASSBOOK_KEY']
     wwdr_string = os.environ['WWDR_CERTIFICATE']
-    password = os.environ['PASSBOOK_KEY_PASSWORD']
 
-    passfile.create(certificate_string, key_string, wwdr_string, password, 'test.pkpass') # Create and output the Passbook file (.pkpass) 
+    passfile.create(certificate_string, key_string, wwdr_string, 'some-key-password', 'test.pkpass') # Create and output the Passbook file (.pkpass) 
 
 Note: Getting WWDR Certificate
 ==========================
